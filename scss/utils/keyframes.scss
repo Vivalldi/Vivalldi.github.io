@@ -7,3 +7,15 @@
   }
 
 }
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes addFill {
+  to {
+    fill-opacity: 1;
+  }
+}

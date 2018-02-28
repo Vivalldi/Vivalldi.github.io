@@ -1,0 +1,32 @@
+@function drawSVG($drawTime, $delayTime: 0s, $fill: false) {
+  @if $fill == true {
+    $secondDelay: $drawTime + $delayTime;
+    @return drawPath $drawTime ease-in-out $delayTime forwards, addFill .5s linear $secondDelay forwards;
+  }
+  @else {
+    @return drawPath $drawTime ease-in-out $delayTime forwards;
+  }
+}
+
+#cosgrove-path {
+  stroke: #FAFAFA;
+  fill: #FAFAFA;
+  fill-opacity: 0;
+  stroke-dasharray: 172;
+  stroke-dashoffset: 172;
+  animation: drawSVG(1.5s, .25s, true);
+}
+
+#owl-container {
+  transform: scale(2.5);
+}
+
+#owl-path {
+  stroke: #FAFAFA;
+  stroke-width: .25;
+  fill: #FAFAFA;
+  fill-opacity: 0;
+  stroke-dasharray: 77;
+  stroke-dashoffset: 77;
+  animation: drawSVG(1.5s, .25s, true);
+}
